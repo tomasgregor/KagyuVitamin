@@ -1,16 +1,7 @@
+<%= render 'admin_menu' %>
+
 <h1>Edit quote</h1>
-
+<p>
+	<strong>Quote id:<%= @quote.id %></strong>
+</p>
 <%= render 'form' %>
-
-
-
-<!-- <%= form_tag update_url(@quote.id), :method => :put do %>
-	<%= label_tag 'quote', 'Change quote text' %>
-	<%= text_area_tag 'quote', @quote.quote, :size => "40x3" %>
-	<%= label_tag 'quote', 'Change teacher\'s name' %>
-	<%= text_field_tag 'teacher', @quote.teacher %>
-	<%= label_tag 'quote', 'Change email of person who posted the quote' %>
-	<%= text_field_tag 'posted_by', @quote.posted_by %>
-	<br><br>
-	<%= submit_tag 'Update quote'%>
-<% end %> -->

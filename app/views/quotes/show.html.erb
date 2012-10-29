@@ -1,0 +1,21 @@
+<%= render 'admin_menu' %>
+
+<h1>Quote detail</h1>
+<p><strong>Quote id: <%= @quote.id %></strong></p>
+
+<p class="lead">
+ 	<strong>"<%= @quote.quote %>"</strong>
+</p>
+
+<p><strong>Teacher: <%= @quote.teacher%></strong></p>
+
+<p>
+	<em>Posted by: <%= @quote.posted_by %></em><br />
+ 	<em>Created at: <%= @quote.created_at %></em><br />
+ 	<em>Updated at: <%= @quote.updated_at %></em>
+</p>
+
+<p>
+	<%= link_to 'Edit', edit_url(@quote.id) %></p>
+</p>
+	

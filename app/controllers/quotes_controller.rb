@@ -19,6 +19,10 @@ class QuotesController < ApplicationController
     
   end
   
+  def show
+    @quote = Quote.find_by_id(params['id'])
+  end
+  
   def new
     @quote = Quote.new
   end
@@ -29,9 +33,9 @@ class QuotesController < ApplicationController
   
   def create
     @quote = Quote.new
-    @quote.quote = params[:quote]
-    @quote.teacher = params[:teacher]
-    @quote.posted_by = params[:posted_by]
+    @quote.quote = params[:quote][:quote]
+    @quote.teacher = params[:quote][:teacher]
+    @quote.posted_by = params[:quote][:posted_by]
     if @quote.save
       redirect_to quotes_url
     else
@@ -41,13 +45,13 @@ class QuotesController < ApplicationController
   
   def update
     @quote = Quote.find_by_id(params[:id])
-    @quote.quote = params[:quote]
-    @quote.teacher = params[:teacher]
-    @quote.posted_by = params[:posted_by]
+    @quote.quote = params[:quote][:quote]
+    @quote.teacher = params[:quote][:teacher]
+    @quote.posted_by = params[:quote][:posted_by]
     if @quote.save
       redirect_to quotes_url
     else
-      render 'new'
+      render 'edit'
     end
   end
   

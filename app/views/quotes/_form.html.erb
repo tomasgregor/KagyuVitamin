@@ -1,12 +1,11 @@
-<p><%= @quote.errors.full_messages %></p>
+<% if @quote.errors.full_messages.present? %>
+	<p><%= @quote.errors.full_messages %></p>
+<% end %>
 
 <%= form_for @quote do |f| %>
-	<%= f.label :quote, "Enter quote text" %>
-	<%= f.text_area :quote, :placeholder => "Quote...", :size => "200x3" %>
-	<%= f.label :teacher, "Enter teacher\'s name" %>
-	<%= f.text_field :teacher, :placeholder => "Teacher..." %>
-	<%= f.label :posted_by, "Enter your email" %>
-	<%= f.text_field :posted_by, :placeholder => "Email..." %>
-	<br>
+	<%= f.label :quote, "Enter quote text" %><%= f.text_area :quote, :size => "200x3" %>
+	<%= f.label :teacher, "Enter teacher name" %><%= f.text_field :teacher %>
+	<%= f.label :posted_by, "Enter your email" %><%= f.text_field :posted_by %>
+	<br />
 	<%= f.submit %>
 <% end %>
