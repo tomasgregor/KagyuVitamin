@@ -1,0 +1,242 @@
+/*!
+ * Bootstrap Responsive v2.1.1
+ *
+ * Copyright 2012 Twitter, Inc
+ * Licensed under the Apache License v2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Designed and built with all the love in the world @twitter by @mdo and @fat.
+ */
+
+.clearfix {
+  *zoom: 1;
+}
+
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  line-height: 0;
+  content: "";
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+
+/*FONT RESIZING*/
+
+
+/*Big screens*/
+@media (min-width: 768px) {
+	.header {
+		margin: 25px auto 0 auto;
+	}
+	h3 {
+	font-size: 28px;
+	line-height: 40px;
+	}
+	.lead {
+		font-size: 40px;
+		line-height: 46px;
+	  
+	}
+	.btn-small {
+	padding: 5px 11px;
+	font-size: 18px;
+	line-height: 18px;
+	}
+}
+
+/*iPAD*/
+@media (max-width: 768px) {
+	.header {
+		margin: 15px auto 0 auto;
+	}
+	.lead {
+		font-size: 30px;
+		line-height: 36px;
+	  
+	}
+	.btn-small {
+	padding: 4px 10px;
+	font-size: 14px;
+	line-height: 18px;
+	}
+}
+
+/*iPhone landscape*/
+@media (max-width: 480px) {
+	.header {
+		margin: 5px auto 0 auto;
+	}
+	h3 {
+	font-size: 22px;
+	line-height: 36px;
+	}
+	.lead {
+		font-size: 24px;
+		line-height: 30px;
+	  
+	}
+	.btn-small {
+	padding: 3px 9px;
+	font-size: 12px;
+	line-height: 18px;
+	}
+	
+}
+
+/*iPhone portrait*/
+@media (max-width: 320px) {
+	.lead {
+		font-size: 21px;
+	}
+}
+
+
+
+
+
+
+@media (min-width: 1200px) {
+  
+  .container,
+  .navbar-static-top .container,
+  .navbar-fixed-top .container,
+  .navbar-fixed-bottom .container {
+    width: 1170px;
+  }
+  
+  input,
+  textarea,
+  .uneditable-input {
+    margin-left: 0;
+  }
+  
+}
+
+@media (min-width: 768px) and (max-width: 979px) {
+  
+  .container,
+  .navbar-static-top .container,
+  .navbar-fixed-top .container,
+  .navbar-fixed-bottom .container {
+    width: 724px;
+  }
+  
+  input,
+  textarea,
+  .uneditable-input {
+    margin-left: 0;
+  }
+  
+  
+}
+
+@media (max-width: 767px) {
+  body {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+  
+  .container-fluid {
+    padding: 0;
+  }
+  
+  .container {
+    width: auto;
+  }
+  
+  .input-large,
+  .input-xlarge,
+  .input-xxlarge,
+  input[class*="span"],
+  select[class*="span"],
+  textarea[class*="span"],
+  .uneditable-input {
+    display: block;
+    width: 100%;
+    min-height: 30px;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+  .input-prepend input,
+  .input-append input,
+  .input-prepend input[class*="span"],
+  .input-append input[class*="span"] {
+    display: inline-block;
+    width: auto;
+  }
+  .controls-row [class*="span"] + [class*="span"] {
+    margin-left: 0;
+  }
+  .modal {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    left: 20px;
+    width: auto;
+    margin: 0;
+  }
+  .modal.fade.in {
+    top: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-collapse {
+    -webkit-transform: translate3d(0, 0, 0);
+  }
+  .page-header h1 small {
+    display: block;
+    line-height: 20px;
+  }
+  input[type="checkbox"],
+  input[type="radio"] {
+    border: 1px solid #ccc;
+  }
+  .form-horizontal .control-label {
+    float: none;
+    width: auto;
+    padding-top: 0;
+    text-align: left;
+  }
+  .form-horizontal .controls {
+    margin-left: 0;
+  }
+  .form-horizontal .control-list {
+    padding-top: 0;
+  }
+  .form-horizontal .form-actions {
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+  .modal {
+    top: 10px;
+    right: 10px;
+    left: 10px;
+  }
+  .modal-header .close {
+    padding: 10px;
+    margin: -10px;
+  }
+  .carousel-caption {
+    position: static;
+  }
+}
+
+@media (max-width: 979px) {
+  body {
+    padding-top: 0;
+  }
+  
+}
+
+@media (min-width: 980px) {
+  .nav-collapse.collapse {
+    height: auto !important;
+    overflow: visible !important;
+  }
+}

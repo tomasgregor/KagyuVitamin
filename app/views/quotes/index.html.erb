@@ -1,0 +1,14 @@
+<h1>List of quotes</h1>
+
+<ul>
+  <% @quotes.each do |quote| %>
+	<li>
+		<p>
+		 <strong>"<%= quote.quote %>"</strong>
+		 <br>by <%= quote.teacher%>
+		 <br><em>posted by: <%= quote.posted_by%></em>
+		 <br><%= link_to 'Edit', edit_url(quote.id) %> | <%= link_to 'Delete', destroy_url(quote.id), :confirm => 'Are you sure?', :method => :delete %>
+		</p>
+	</li>
+  <% end %>
+</ul>
