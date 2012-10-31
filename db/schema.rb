@@ -11,14 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121023010343) do
+ActiveRecord::Schema.define(:version => 20121031223215) do
 
   create_table "quotes", :force => true do |t|
     t.text     "quote"
     t.text     "teacher"
     t.text     "posted_by"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+    t.integer  "verification"
   end
 
 end
