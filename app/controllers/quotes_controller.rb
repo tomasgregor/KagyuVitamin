@@ -16,11 +16,14 @@ class QuotesController < ApplicationController
         render :xml => @quotes
       end
     end
+  end
     
+  def teacher
+    @quotes = Quote.where(:teacher => params[:id].capitalize)
   end
   
   def show
-    @quote = Quote.find_by_id(params['id'])
+    @quote = Quote.find_by_id(params[:id])
   end
   
   def new
@@ -37,6 +40,7 @@ class QuotesController < ApplicationController
     @quote.teacher = params[:quote][:teacher]
     @quote.posted_by = params[:quote][:posted_by]
     if @quote.save
+      MyMailer.quote_email(@quote).deliver
       redirect_to quotes_url
     else
       render 'new'
