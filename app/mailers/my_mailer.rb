@@ -1,5 +1,5 @@
 class MyMailer < ActionMailer::Base
-  default from: "new@kagyuvitamin.org"
+  default from: "tomasg10@gmail.com"
   
   def quote_email(quote)
       @quote  = quote
