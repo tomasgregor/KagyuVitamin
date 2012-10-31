@@ -1,6 +1,6 @@
 KagyuVitamin::Application.routes.draw do
  
-  root :to => '/quotes/today'
+  root :to => 'quotes#today'
  
   get '/quotes'           => 'quotes#index',   :as => 'quotes'
   post '/quotes'          => 'quotes#create'
