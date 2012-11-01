@@ -1,7 +1,7 @@
 class QuotesController < ApplicationController
   
   def today
-    @quote_today = Quote.all.shuffle[0]
+    @quote_today = Quote.where(:verification => 1).shuffle[0]
   end
   
   def index
