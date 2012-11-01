@@ -71,7 +71,7 @@
 		margin: 5px auto 0 auto;
 	}
 	h3 {
-	font-size: 22px;
+	font-size: 26px;
 	line-height: 36px;
 	}
 	.lead {
@@ -90,7 +90,7 @@
 /*iPhone portrait*/
 @media (max-width: 320px) {
 	.lead {
-		font-size: 21px;
+		font-size: 24px;
 	}
 }
 
