@@ -18,6 +18,10 @@ class QuotesController < ApplicationController
     end
   end
   
+  def show
+    @quote = Quote.find_by_id(params[:id])
+  end
+  
   def verify
     @quotes = Quote.where(:verification => 0) + Quote.where(:verification => nil)
     
@@ -30,14 +34,6 @@ class QuotesController < ApplicationController
         render :xml => @quotes
       end
     end
-  end
-  
-  def teacher
-    @quotes = Quote.where(:teacher => params[:id].capitalize)
-  end
-  
-  def show
-    @quote = Quote.find_by_id(params[:id])
   end
   
   def new
