@@ -5,7 +5,7 @@ class QuotesController < ApplicationController
   end
   
   def index
-    @quotes = Quote.all
+    @quotes = Quote.where(:verification => 1)
     
     respond_to do |format|
       format.html
@@ -17,7 +17,21 @@ class QuotesController < ApplicationController
       end
     end
   end
+  
+  def verify
+    @quotes = Quote.where(:verification => 0) + Quote.where(:verification => nil)
     
+    respond_to do |format|
+      format.html
+      format.json do
+        render :json => @quotes
+      end
+      format.xml do
+        render :xml => @quotes
+      end
+    end
+  end
+  
   def teacher
     @quotes = Quote.where(:teacher => params[:id].capitalize)
   end
@@ -42,7 +56,8 @@ class QuotesController < ApplicationController
     if @quote.save
       # re-active mailer after confirmation from Sendgrid
       # MyMailer.quote_email(@quote).deliver
-      redirect_to quotes_url
+      
+      redirect_to confirmation_url 
     else
       render 'new'
     end
@@ -53,6 +68,7 @@ class QuotesController < ApplicationController
     @quote.quote = params[:quote][:quote]
     @quote.teacher = params[:quote][:teacher]
     @quote.posted_by = params[:quote][:posted_by]
+    @quote.verification = params[:quote][:verification]
     if @quote.save
       redirect_to quotes_url
     else
@@ -64,7 +80,7 @@ class QuotesController < ApplicationController
     p= Quote.find_by_id(params[:id])
     p.destroy
     
-    redirect_to quotes_url
+    redirect_to verify_url
   end
   
 end

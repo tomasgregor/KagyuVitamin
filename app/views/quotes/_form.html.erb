@@ -7,5 +7,9 @@
 	<%= f.label :teacher, "Enter teacher name" %><%= f.text_field :teacher %>
 	<%= f.label :posted_by, "Enter your email" %><%= f.text_field :posted_by %>
 	<br />
-	<%= f.submit %>
+	<% if params[:edit] == "admin" %>
+		<%= f.check_box :verification %><%= f.label :verification, "Verify quote" %>
+	<% end %>
+	<br />
+	<%= f.submit :class => "btn btn-small" %>
 <% end %>

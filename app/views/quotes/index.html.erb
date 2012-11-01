@@ -8,7 +8,7 @@
 		<p>
 		 <strong>"<%= quote.quote %>"</strong>
 		 <br>by <%= quote.teacher%>
-		 <br><%= link_to 'Detail', quote_url(quote.id) %> | <%= link_to 'Edit', edit_url(quote.id) %> | <%= link_to 'Delete', quote_url(quote.id), :confirm => 'Are you sure?', :method => :delete %>
+		 <br><%= link_to 'Detail', quote_url(quote.id) %> | <%= link_to 'Edit', edit_url(quote.id, "admin") %>
 		</p>
 	</li>
   <% end %>
