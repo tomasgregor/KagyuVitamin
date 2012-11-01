@@ -622,8 +622,9 @@ sup {
   font-style: normal;
 }
 
-.muted {
-  color: ##80000D;
+.muted a {
+  color: #80010B;
+  font-weight: bold;
 }
 
 .text-warning {

@@ -16,7 +16,4 @@ KagyuVitamin::Application.routes.draw do
   delete '/quotes/:id'    => 'quotes#destroy'
   put '/quotes/:id'       => 'quotes#update'
   
-  
-  
-  
 end
