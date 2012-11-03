@@ -1,5 +1,7 @@
 class QuotesController < ApplicationController
   
+  http_basic_authenticate_with :name => "tomas108", :password => "kagyu108", :only => [ :index, :verify, :show, :update, :destroy ]
+  
   def today
     @quote_today = Quote.where(:verification => 1).shuffle[0]
   end
