@@ -51,7 +51,7 @@ class QuotesController < ApplicationController
     @quote.posted_by = params[:quote][:posted_by]
     if @quote.save
       # re-active mailer after confirmation from Sendgrid
-      # MyMailer.quote_email(@quote).deliver
+      MyMailer.quote_email(@quote).deliver
       
       redirect_to confirmation_url 
     else
