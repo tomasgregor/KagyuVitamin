@@ -47,10 +47,7 @@ class QuotesController < ApplicationController
   end
   
   def create
-    @quote = Quote.new
-    @quote.quote = params[:quote][:quote]
-    @quote.teacher = params[:quote][:teacher]
-    @quote.posted_by = params[:quote][:posted_by]
+    @quote = Quote.new(params[:quote])
     if @quote.save
       # re-active mailer after confirmation from Sendgrid
       MyMailer.quote_email(@quote).deliver
@@ -65,6 +62,7 @@ class QuotesController < ApplicationController
     @quote = Quote.find_by_id(params[:id])
     @quote.quote = params[:quote][:quote]
     @quote.teacher = params[:quote][:teacher]
+    @quote.source = params[:quote][:source]
     @quote.posted_by = params[:quote][:posted_by]
     @quote.verification = params[:quote][:verification]
     if @quote.save
