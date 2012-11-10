@@ -4,8 +4,10 @@
 
 <%= form_for @quote do |f| %>
 	<%= f.label :quote, "Enter quote text" %><%= f.text_area :quote, :size => "200x3" %>
-	<%= f.label :teacher, "Enter teacher name" %><%= f.text_field :teacher %>
-	<%= f.label :source, "State source from which you took the quote" %><%= f.text_field :source %>
+	<%= f.label :teacher, "Enter teacher\'s name" %><%= f.text_field :teacher %>
+	<%= f.label :source, "State source from which you took the quote" %>
+	<em>(book name and page / lecture place, date and time / URL of a webpage)</em><br />
+	<%= f.text_field :source %>
 	<%= f.label :posted_by, "Enter your email" %><%= f.email_field :posted_by %>
 	<br />
 	<% if params[:edit] == "admin" %>
