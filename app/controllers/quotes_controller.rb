@@ -6,6 +6,10 @@ class QuotesController < ApplicationController
     @quote_today = Quote.where(:verification => 1).shuffle[0]
   end
   
+  def widget_osx
+    @quote_today = Quote.where(:verification => 1).shuffle[0]
+  end
+  
   def index
     @quotes = Quote.where(:verification => 1)
     

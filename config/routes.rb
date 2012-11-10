@@ -6,6 +6,7 @@ KagyuVitamin::Application.routes.draw do
   post '/quotes'          => 'quotes#create'
   get '/new'              => 'quotes#new',      :as => 'new'
   get '/today'            => 'quotes#today',    :as => 'today'
+  get '/widget_osx'       => 'quotes#widget_osx'
   get '/quotes/verify'    => 'quotes#verify',   :as => 'verify'
   get '/confirmation'     => 'quotes#confirmation', :as => 'confirmation'
   
