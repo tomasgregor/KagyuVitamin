@@ -600,6 +600,11 @@ p {
   color: #ffcc66;
 }
 
+.lead a {
+  color: #ffcc66;
+  text-decoration:none;
+}
+
 
 small {
   font-size: 85%;

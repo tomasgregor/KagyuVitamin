@@ -94,7 +94,12 @@
 	.lead {
 		font-size: 24px;
 	}
+	.footer {
+		margin: 0 auto 60px auto;
+	}
 }
+
+
 
 
 
