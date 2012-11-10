@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121031223215) do
+ActiveRecord::Schema.define(:version => 20121110171742) do
 
   create_table "quotes", :force => true do |t|
     t.text     "quote"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(:version => 20121031223215) do
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
     t.integer  "verification"
+    t.string   "source"
   end
 
 end
