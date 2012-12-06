@@ -4,19 +4,12 @@
 </div>
 
 <!-- QUOTE -->
-<div class="container header">
-	<p class="lead"><a href="#" onClick="window.location.reload( true );">"<%= @quote_today.quote %>"</a></p>
-	<p class>
-		<cite>
-			<%= @quote_today.teacher %>
-		</cite>
-	</p>
-	<br>
-</div>
+<%= render 'quote_today', :quote => @quote %>
 
 <!-- BUTTON -->
 <div class="container">
-	<a href="#" class="btn btn-small" type="button" onClick="window.location.reload( true );">more inspiration</a>
+	<%= button_to "more inspiration", today_url, :remote => true, :method => "get", :class => "btn btn-small" %>
+	<!-- <a href="#" class="btn btn-small" type="button" onClick="window.location.reload( true );">more inspiration</a> -->
 <div>
 
 <!-- FOOTER -->

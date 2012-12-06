@@ -14,5 +14,5 @@
 /log/*.log
 /tmp
 
-# Ignore Heroku Environmet.
-/config/heroku_env.rb
+# Ignore Heroku Environment
+/config/initializers/email_credentials.rb

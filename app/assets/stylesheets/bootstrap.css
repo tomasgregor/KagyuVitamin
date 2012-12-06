@@ -600,11 +600,11 @@ p {
   color: #ffcc66;
 }
 
-.lead a {
+a.lead,
+a.lead:hover  {
   color: #ffcc66;
   text-decoration:none;
 }
-
 
 small {
   font-size: 85%;
