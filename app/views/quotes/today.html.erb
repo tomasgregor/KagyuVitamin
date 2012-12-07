@@ -8,8 +8,7 @@
 
 <!-- BUTTON -->
 <div class="container">
-	<%= button_to "more inspiration", today_url, :remote => true, :method => "get", :class => "btn btn-small" %>
-	<!-- <a href="#" class="btn btn-small" type="button" onClick="window.location.reload( true );">more inspiration</a> -->
+	<%= button_to "more inspiration", today_url(:last_quote => @quote.id), :method => "get", :class => "btn btn-small", :remote => true %>
 <div>
 
 <!-- FOOTER -->

@@ -3,7 +3,12 @@ class QuotesController < ApplicationController
   http_basic_authenticate_with :name => "tomas108", :password => "kagyu108", :only => [ :index, :verify, :show, :update, :destroy ]
   
   def today
-    @quote = Quote.where(:verification => 1).shuffle[0]
+    if params[:last_quote].present?
+      quote_id = (Quote.where(:verification => 1).pluck(:id).delete_if {|x| x == (params[:last_quote].to_i)}).shuffle[0]
+      @quote = Quote.find_by_id(quote_id)
+    else
+      @quote = Quote.where(:verification => 1).shuffle[0]
+    end
     
     respond_to do |format|
       format.js
